@@ -7,7 +7,7 @@ namespace AsteroidsGame
     /// <summary>
     /// класс Asteroid, наследуемый от BaseObject
     /// </summary>
-    class Asteroid : BaseObject
+    class Asteroid : BaseObject, ICloneable
     {
         /// <summary>
         /// Свойство , описыващее энергию
@@ -45,6 +45,16 @@ namespace AsteroidsGame
             if (Pos.X > Game.Width) Dir.X = -Dir.X;
             if (Pos.Y < 0) Dir.Y = -Dir.Y;
             if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
+        }
+
+        public object Clone()
+        {
+            // Создаем копию 
+            Asteroid asteroid = new Asteroid(new Point(Pos.X, Pos.Y), new
+                Point(Dir.X, Dir.Y), new Size(Size.Width, Size.Height));
+            // Не забываем скопировать новому астероиду Power нашего астероида
+            asteroid.Power = Power;
+            return asteroid;
         }
     }
 }
