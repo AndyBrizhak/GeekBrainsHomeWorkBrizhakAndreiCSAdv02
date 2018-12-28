@@ -40,6 +40,7 @@ namespace AsteroidsGame
         /// </summary>
         public abstract void Update();
 
+       // public abstract void Crash();
 
         /// <summary>
         /// Реализация интрефейса ICollision

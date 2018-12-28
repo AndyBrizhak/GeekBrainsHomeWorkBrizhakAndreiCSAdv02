@@ -145,8 +145,9 @@ namespace AsteroidsGame
 
                 if (a.Collision(_bullet))
                 {
-                    System.Media.SystemSounds.Hand.Play(); 
-                  // a.;
+                    System.Media.SystemSounds.Hand.Play();   // подать звуковой сигнал
+                    a.Crash();                               //изменить положение обьекта   
+                    _bullet.Crash();                         //изменить положение обьекта    
                 }
                 a.Update();
             }

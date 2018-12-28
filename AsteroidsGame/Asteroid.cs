@@ -59,5 +59,13 @@ namespace AsteroidsGame
             asteroid.Power = Power;
             return asteroid;
         }
+
+        // <summary>
+        /// при столкновении перенести положение снаряда на верхний край экрана
+        /// </summary>
+        public void Crash()
+        {
+            Pos.Y = 0;
+        }
     }
 }

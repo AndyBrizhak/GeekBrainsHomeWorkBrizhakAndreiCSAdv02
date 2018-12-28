@@ -20,5 +20,14 @@ namespace AsteroidsGame
         {
             Pos.X = Pos.X + 3;
         }
+
+        
+        /// <summary>
+        /// при столкновении перенести положение снаряда на левый кран экрана
+        /// </summary>
+        public  void Crash() 
+        {
+            Pos.X = 0;
+        }
     }
 }
