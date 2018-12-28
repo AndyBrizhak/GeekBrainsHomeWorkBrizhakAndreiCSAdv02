@@ -14,7 +14,7 @@ namespace AsteroidsGame
         }
 
         /// <summary>
-        /// рисует обьект Star
+        /// рисует обьект 
         /// </summary>
         public override void Draw()
         {
@@ -23,7 +23,7 @@ namespace AsteroidsGame
         }
 
         /// <summary>
-        /// рассчитывает местоположение обьекта Star
+        /// рассчитывает местоположение обьекта 
         /// </summary>
         public override void Update()
         {
