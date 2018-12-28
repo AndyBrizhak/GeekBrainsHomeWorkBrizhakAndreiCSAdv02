@@ -142,8 +142,13 @@ namespace AsteroidsGame
                 obj.Update();
             foreach (Asteroid a in _asteroids)
             {
+
+                if (a.Collision(_bullet))
+                {
+                    System.Media.SystemSounds.Hand.Play(); 
+                  // a.;
+                }
                 a.Update();
-                if (a.Collision(_bullet)) { System.Media.SystemSounds.Hand.Play(); }
             }
             _bullet.Update();
         }
@@ -156,10 +161,13 @@ namespace AsteroidsGame
         /// <param name="height">фактическая высота экрана</param>
         public static void CheckSizeScreen(int width, int height)
         {
-            if (height > MaxH) throw new ArgumentOutOfRangeException();
-            if (width > MaxW) throw new ArgumentOutOfRangeException();
-            if (height < 0) throw new ArgumentOutOfRangeException();
-            if (width < 0) throw new ArgumentOutOfRangeException();
+            if (width <= 0 || height <= 0 || width > MaxW || height > MaxH)
+            {
+                throw new ArgumentOutOfRangeException();   //выбросить исключение
+
+            }
+
+           
         }
         
     }
