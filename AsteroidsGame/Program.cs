@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 //Брижак Андрей Домашнее задание по курсу C# уровень 2 урок 2
+
 namespace AsteroidsGame
 {
     class Program
