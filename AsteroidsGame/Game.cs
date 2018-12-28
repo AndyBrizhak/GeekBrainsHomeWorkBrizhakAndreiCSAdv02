@@ -27,6 +27,16 @@ namespace AsteroidsGame
         /// </summary>
         public static BaseObject[] _objs;
 
+        /// <summary>
+        /// Обьект типа Bullet
+        /// </summary>
+        private static Bullet _bullet;
+
+        /// <summary>
+        /// массив объектов Asteroid
+        /// </summary>
+        private static Asteroid[] _asteroids;
+
         static Game()
         {
         }
@@ -96,15 +106,27 @@ namespace AsteroidsGame
         public static void Load()
         {
             _objs = new BaseObject[30];
-            //       for (int i = 0; i < _objs.Length; i++)
-            //   _objs[i] = new BaseObject(new Point(600, i * 20), new Point(15 - i, 15 - i), new Size(20, 20));
-            //   _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(20, 20));
-            for (int i = 0; i < _objs.Length / 3; i++)
-                _objs[i] = new Planet(new Point(600, i * 20), new Point(-i, -i), new Size(10, 10));
-            for (int i = _objs.Length / 3; i < _objs.Length / 3 * 2; i++)
-                _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(10, 10));
-            for (int i = _objs.Length / 3 * 2; i < _objs.Length; i++)
-                _objs[i] = new SmallRedStar(new Point(600, i * 20), new Point(-i, 0), new Size(5, 5));
+            _bullet = new Bullet(new Point(0, 200), new Point(5, 0), new Size(4, 1));
+            _asteroids = new Asteroid[3];
+            var rnd = new Random();
+            for (var i = 0; i < _objs.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _objs[i] = new Star(new Point(1000, rnd.Next(0, Game.Height)), new Point(-r, r), new Size(3, 3));
+            }
+            for (var i = 0; i < _asteroids.Length; i++)
+            {
+                int r = rnd.Next(5, 50);
+                _asteroids[i] = new Asteroid(new Point(1000, rnd.Next(0, Game.Height)), new Point(-r / 5, r), new
+                    Size(r, r));
+            }
+
+            // for (int i = 0; i < _objs.Length / 3; i++)
+            //    _objs[i] = new Planet(new Point(600, i * 20), new Point(-i, -i), new Size(10, 10));
+            //for (int i = _objs.Length / 3; i < _objs.Length / 3 * 2; i++)
+            //    _objs[i] = new Star(new Point(600, i * 20), new Point(-i, 0), new Size(10, 10));
+           // for (int i = _objs.Length / 3 * 2; i < _objs.Length; i++)
+           //     _objs[i] = new SmallRedStar(new Point(600, i * 20), new Point(-i, 0), new Size(5, 5));
         }
 
         /// <summary>
