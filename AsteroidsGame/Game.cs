@@ -17,6 +17,10 @@ namespace AsteroidsGame
         // Ширина и высота игрового поля
         public static int Width { get; set; }
         public static int Height { get; set; }
+        /// <summary>
+        /// Максимальная высота и ширина экрана
+        /// </summary>
+        const int MaxH = 1000, MaxW = 1000;
 
         // <summary>
         /// массив объектов BaseObject
@@ -33,14 +37,23 @@ namespace AsteroidsGame
         /// <param name="form"></param>
         public static void Init(Form form)
         {
-            // Графическое устройство для вывода графики
-            Graphics g;
+            
+
+
+              // Графическое устройство для вывода графики
+              Graphics g;
             // предоставляет доступ к главному буферу графического контекста для текущего приложения
             _context = BufferedGraphicsManager.Current;
             g = form.CreateGraphics(); // Создаём объект - поверхность рисования и связываем его с формой
             // Запоминаем размеры формы
             Width = form.Width;
             Height = form.Height;
+
+            //  Задача 4 ДЗ Проверка на задание размера экрана. Если высота или ширина(Width,
+            //      Height) больше 1000 или принимает отрицательное значение, то выбросить исключение
+            //  ArgumentOutOfRangeException().
+            CheckSizeScreen(Width, Height);
+
             // Связываем буфер в памяти с графическим объектом.
             // для того, чтобы рисовать в буфере
             Buffer = _context.Allocate(g, new Rectangle(0, 0, Width, Height));
@@ -101,6 +114,20 @@ namespace AsteroidsGame
         {
             foreach (BaseObject obj in _objs)
                 obj.Update();
+        }
+
+
+        /// <summary>
+        /// Проверка на задание размера экрана
+        /// </summary>
+        /// <param name="width">фактическая ширина экрана</param>
+        /// <param name="height">фактическая высота экрана</param>
+        public static void CheckSizeScreen(int width, int height)
+        {
+            if (height > MaxH) throw new ArgumentOutOfRangeException();
+            if (width > MaxW) throw new ArgumentOutOfRangeException();
+            if (height < 0) throw new ArgumentOutOfRangeException();
+            if (width < 0) throw new ArgumentOutOfRangeException();
         }
         
     }
