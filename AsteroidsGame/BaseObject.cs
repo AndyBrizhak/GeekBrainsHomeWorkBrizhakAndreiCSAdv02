@@ -9,7 +9,7 @@ namespace AsteroidsGame
         protected Point Pos;
         protected Point Dir;
         protected Size Size;
-        Image Planet = Image.FromFile(@"Planet.png");
+        //Image Planet = Image.FromFile(@"Planet.png");
 
         /// <summary>
         /// 
@@ -30,7 +30,7 @@ namespace AsteroidsGame
         public virtual void Draw()
         {
             //Game.Buffer.Graphics.DrawEllipse(Pens.White, Pos.X, Pos.Y, Size.Width, Size.Height);
-            Game.Buffer.Graphics.DrawImage(Planet, Pos.X, Pos.Y);
+            //Game.Buffer.Graphics.DrawImage(Planet, Pos.X, Pos.Y);
         }
 
         /// <summary>
