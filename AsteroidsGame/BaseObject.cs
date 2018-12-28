@@ -4,6 +4,9 @@ using System.Drawing;
 
 namespace AsteroidsGame
 {
+    /// <summary>
+    /// Абстрактный класс BaseObject 
+    /// </summary>
     abstract class BaseObject
     {
         protected Point Pos;

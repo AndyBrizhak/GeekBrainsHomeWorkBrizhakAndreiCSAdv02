@@ -4,6 +4,9 @@ using System.Drawing;
 
 namespace AsteroidsGame
 {
+    /// <summary>
+    /// класс Star, наследуемый от BaseObject
+    /// </summary>
     class Star : BaseObject
     {
         public Star(Point pos, Point dir, Size size) : base(pos, dir, size)

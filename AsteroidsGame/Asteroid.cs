@@ -5,11 +5,15 @@ using System.Drawing;
 namespace AsteroidsGame
 {
     /// <summary>
-    /// класс Planet, наследуемый от BaseObject
+    /// класс Asteroid, наследуемый от BaseObject
     /// </summary>
-    class Planet : BaseObject
+    class Asteroid : BaseObject
     {
-        Image ImagePlanet = Image.FromFile(@"Planet.png");
+        /// <summary>
+        /// Свойство , описыващее энергию
+        /// </summary>
+        public int Power { get; set; }
+
 
         /// <summary>
         /// 
@@ -17,9 +21,9 @@ namespace AsteroidsGame
         /// <param name="pos"></param>
         /// <param name="dir"></param>
         /// <param name="size"></param>
-        public Planet(Point pos, Point dir, Size size) : base(pos, dir, size)
+        public Asteroid(Point pos, Point dir, Size size) : base(pos, dir, size)
         {
-
+            Power = 1;
         }
 
         /// <summary>
@@ -27,8 +31,7 @@ namespace AsteroidsGame
         /// </summary>
         public override void Draw()
         {
-            Game.Buffer.Graphics.DrawImage(ImagePlanet, Pos.X, Pos.Y);
-            
+            Game.Buffer.Graphics.FillEllipse(Brushes.White, Pos.X, Pos.Y, Size.Width, Size.Height);
         }
 
         /// <summary>
