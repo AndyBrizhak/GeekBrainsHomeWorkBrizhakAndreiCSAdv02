@@ -7,7 +7,7 @@ namespace AsteroidsGame
     /// <summary>
     /// Абстрактный класс BaseObject 
     /// </summary>
-    abstract class BaseObject
+    abstract class BaseObject : ICollision
     {
         protected Point Pos;
         protected Point Dir;
@@ -39,7 +39,14 @@ namespace AsteroidsGame
         /// расчитывает новое местоположение обьектов
         /// </summary>
         public abstract void Update();
-        
-        
+
+
+        /// <summary>
+        /// Реализация интрефейса ICollision
+        /// </summary>
+        /// <param name="o">логическое да/нет</param>
+        /// <returns></returns>
+        public bool Collision(ICollision o) => o.Rect.IntersectsWith(this.Rect);
+        public Rectangle Rect => new Rectangle(Pos, Size);
     }
 }
