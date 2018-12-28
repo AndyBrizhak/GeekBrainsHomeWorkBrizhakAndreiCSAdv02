@@ -47,12 +47,15 @@ namespace AsteroidsGame
             if (Pos.Y > Game.Height) Dir.Y = -Dir.Y;
         }
 
+        /// <summary>
+        /// метод клонирует обьект со всеми его свойствами
+        /// </summary>
+        /// <returns></returns>
         public object Clone()
         {
             // Создаем копию 
             Asteroid asteroid = new Asteroid(new Point(Pos.X, Pos.Y), new
                 Point(Dir.X, Dir.Y), new Size(Size.Width, Size.Height));
-            // Не забываем скопировать новому астероиду Power нашего астероида
             asteroid.Power = Power;
             return asteroid;
         }
