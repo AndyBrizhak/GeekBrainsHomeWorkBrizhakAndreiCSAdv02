@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsteroidsGame", "AsteroidsGame\AsteroidsGame.csproj", "{215F2D0A-9EAE-4845-A721-3981D2018FDE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Employees", "..\Employees2\Employees.csproj", "{BC1E99D6-AA20-43FB-B6B1-0C646C701ABD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{215F2D0A-9EAE-4845-A721-3981D2018FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{215F2D0A-9EAE-4845-A721-3981D2018FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{215F2D0A-9EAE-4845-A721-3981D2018FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC1E99D6-AA20-43FB-B6B1-0C646C701ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC1E99D6-AA20-43FB-B6B1-0C646C701ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC1E99D6-AA20-43FB-B6B1-0C646C701ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC1E99D6-AA20-43FB-B6B1-0C646C701ABD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
